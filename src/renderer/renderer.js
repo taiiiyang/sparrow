@@ -1,11 +1,13 @@
 import { createContext } from "./context.js";
 import Shape from "./shape.js";
+import Transform from "./transform";
 import { restore, save, scale, translate, rotate } from "./transform";
 
-class Renderer {
+export class Renderer {
   constructor(width, height) {
     this.ctx = createContext(width, height);
     this.shape = new Shape(this.ctx);
+    this.transform = new Transform(this.ctx);
   }
 
   line(options) {
@@ -33,38 +35,31 @@ class Renderer {
   }
 
   restore() {
-    const context = this.ctx;
-    return restore(context);
+    return this.transform.restore();
   }
 
   save() {
-    const context = this.ctx;
-    return save(context);
+    return this.transform.save();
   }
 
   scale(...args) {
-    const context = this.ctx;
-    return scale(context, ...args);
+    return this.transform.scale(...args);
   }
 
   rotate(...args) {
-    const context = this.ctx;
-    return rotate(context, ...args);
+    return this.transform.rotate(...args);
   }
 
   translate(...args) {
-    const context = this.ctx;
-    return translate(context, ...args);
+    return this.transform.translate(...args);
   }
 
   node() {
-    const context = this.ctx;
-    return context.node;
+    return this.ctx.node;
   }
 
   group() {
-    const context = this.ctx;
-    return context.group;
+    return this.ctx.group;
   }
 
   render() {}

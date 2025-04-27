@@ -45,8 +45,6 @@ export default class Shape {
     return textElement;
   }
 
-  // 对 path 不熟悉的同学可以去这里学习
-  // https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Paths
   // path 的属性 d （路径）是一个字符串，拼接起来比较麻烦，这里我们通过数组去生成
   // [
   //  ['M', 10, 10],

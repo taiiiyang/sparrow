@@ -17,3 +17,9 @@ export function applyAttributes(element, attributes) {
     element.setAttribute(kebabCaseKey, value);
   }
 }
+
+export function applyTransform(element, transform) {
+  let oldTransform = element.getAttribute("transform") || "";
+  oldTransform = oldTransform.trim();
+  element.setAttribute("transform", `${oldTransform} ${transform}`);
+}
