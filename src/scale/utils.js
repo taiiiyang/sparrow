@@ -72,3 +72,29 @@ export function ceil(n, base) {
 export function floor(n, base) {
   return base * Math.floor(n / base);
 }
+
+export function equal(a, b) {
+  return JSON.stringify(a) === JSON.stringify(b);
+}
+
+export function band({ domain, range, padding }) {
+  // 这里的 padding 是一个百分比，表示 padding 占 （ padding + bandWidth ） 的比例
+  const [r0, r1] = range;
+  const n = domain.length;
+  // (r1 - r0) === step * n + padding * step === step * (n + padding);
+  // step = (r1 - r0) / padding
+  const step = (r1 - r0) / (n + padding);
+  const bandWidth = step * (1 - padding);
+  const interval = step - bandWidth; // 间隔
+  // x === 初始位置 + 间隔 + 步长 * i
+  const x = (_, i) => r0 + interval + step * i;
+  return {
+    step,
+    bandWidth,
+    bandRange: new Array(n).fill(0).map(x),
+  };
+}
+
+export function log(x, base) {
+  return Math.log(x) / Math.log(base);
+}

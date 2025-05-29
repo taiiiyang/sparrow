@@ -11,6 +11,7 @@
     "test-render": "cross-env DEBUG_MODE=1 npx jest __tests__/renderer/renderer.spec.js",
     "test-shape": "cross-env DEBUG_MODE=1 npx jest __tests__/renderer/shape.spec.js",
     "test-transform": "cross-env DEBUG_MODE=1 npx jest __tests__/renderer/transform.spec.js",
+    "test-linear": "cross-env DEBUG_MODE=1 npx jest __tests__/scale/linear.spec.js",
     "build": "rimraf -rf ./dist ./lib ./esm && rollup --config",
     "ci": "run-s test build"
   },
