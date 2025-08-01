@@ -15,17 +15,7 @@ jobs:
         with:
           node-version: "16.16.0"
 
-      - name: Cache node modules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-build-cache-node-modules-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            cache-node-modules-
-
       - name: Run ci
         run: |
-          npm install
-          npm run ci
+          pnpm install
+          pnpm run ci
