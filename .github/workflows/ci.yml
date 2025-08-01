@@ -17,5 +17,6 @@ jobs:
 
       - name: Run ci
         run: |
+          npm install -g rimraf
           npm install
           npm run ci
