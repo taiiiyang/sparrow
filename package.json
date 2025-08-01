@@ -5,14 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "rollup -c rollup.config.dev.js --watch",
-    "test": "jest --coverage",
-    "test-live": "cross-env DEBUG_MODE=1 jest --coverage",
-    "test-render": "cross-env DEBUG_MODE=1 npx jest __tests__/renderer/renderer.spec.js",
-    "test-shape": "cross-env DEBUG_MODE=1 npx jest __tests__/renderer/shape.spec.js",
-    "test-transform": "cross-env DEBUG_MODE=1 npx jest __tests__/renderer/transform.spec.js",
-    "test-linear": "cross-env DEBUG_MODE=1 npx jest __tests__/scale/linear.spec.js",
-    "build": "rimraf -rf ./dist ./lib ./esm && rollup --config",
+    "dev": "vite",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "build": "rimraf -rf ./dist ./lib ./esm && vite build",
+    "preview": "vite preview",
     "ci": "run-s test build"
   },
   "repository": {
@@ -35,15 +32,9 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "cross-env": "^7.0.3",
     "globals": "^16.0.0",
-    "jest": "^26.0.1",
-    "jest-electron": "^0.1.12",
+    "vitest": "^1.0.0",
+    "happy-dom": "^9.0.0",
     "npm-run-all": "^4.1.5",
-    "rollup": "^4.40.0",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-copy": "^3.5.0",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-livereload": "^2.0.5",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-serve": "^3.0.0"
+    "vite": "^5.0.0"
   }
 }
