@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "turbo dev",
-    "dev:web": "turbo dev --filter @TRender/web",
+    "dev:pg": "turbo dev --filter @TRender/playground",
+    "dev:docs": "turbo dev --filter @TRender/docs",
     "test": "turbo test",
     "build": "turbo build",
     "lint": "turbo lint"

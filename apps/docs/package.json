@@ -1,0 +1,12 @@
+{
+  "name": "@TRender/docs",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vitepress dev --port 8080",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "latest"
+  }
+}
