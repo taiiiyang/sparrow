@@ -1,6 +1,6 @@
-# sparrow
+# TRender
 
-Sparrow，是一个基于图形语法的可视化框架。
+TRender，是一个基于图形语法的可视化框架。
 
 ## 参考来源
 
