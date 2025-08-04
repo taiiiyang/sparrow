@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@TRender/core": "workspace:*",
+    "@TRender/t-svg": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "@eslint/js": "^9.32.0",
