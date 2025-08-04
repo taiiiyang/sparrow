@@ -1,4 +1,4 @@
-import RedRect from "./components/RedRect";
+import RedRect from "@/src/components/RedRect";
 
 function App() {
   return (
