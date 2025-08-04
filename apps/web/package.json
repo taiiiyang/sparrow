@@ -1,5 +1,5 @@
 {
-  "name": "@sparrow/web",
+  "name": "@TRender/web",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sparrow/core": "workspace:*",
+    "@TRender/core": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "@eslint/js": "^9.32.0",

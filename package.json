@@ -1,16 +1,15 @@
 {
-  "name": "sparrow",
+  "name": "TRender",
   "version": "0.0.0",
-  "description": "Sparrow，是一个基于图形语法的可视化框架。",
+  "description": "TRender，是一个基于图形语法的可视化框架。",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "turbo dev",
-    "dev:web": "turbo dev --filter @sparrow/web",
+    "dev:web": "turbo dev --filter @TRender/web",
     "test": "turbo test",
     "build": "turbo build",
-    "lint": "turbo lint",
-    "ci": "run-s test build"
+    "lint": "turbo lint"
   },
   "workspaces": [
     "apps/*",
@@ -18,15 +17,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taiiiyang/sparrow.git"
+    "url": "git+https://github.com/taiiiyang/TRender.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/taiiiyang/sparrow/issues"
+    "url": "https://github.com/taiiiyang/TRender/issues"
   },
-  "homepage": "https://github.com/taiiiyang/sparrow#readme",
+  "homepage": "https://github.com/taiiiyang/TRender#readme",
   "devDependencies": {
     "turbo": "^2.5.5"
   },

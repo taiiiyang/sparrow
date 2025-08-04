@@ -1,7 +1,6 @@
 import { createContext } from "./context.js";
 import Shape from "./shape.js";
 import Transform from "./transform";
-import { restore, save, scale, translate, rotate } from "./transform";
 
 export class Renderer {
   constructor(width, height) {
