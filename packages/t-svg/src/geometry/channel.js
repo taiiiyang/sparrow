@@ -1,5 +1,5 @@
 export const createChannel = ({ name, optional = true, ...options }) => {
-  return { name, optional, options };
+  return { name, optional, ...options };
 };
 
 export const createChannels = (options = {}) => {

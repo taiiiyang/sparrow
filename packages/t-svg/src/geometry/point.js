@@ -9,7 +9,7 @@ export function point(renderer, I, scales, channels, directStyles, coordinate) {
   };
 
   const { x: X, y: Y, r: R = [] } = channels;
-  return Array.from(I).forEach((i) => {
+  return Array.from(I, (i) => {
     const { r: dr, ...restDefault } = defaultStyle;
     const r = R[i] ?? dr;
     return circle(renderer, coordinate, {

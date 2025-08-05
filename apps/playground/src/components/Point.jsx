@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   createRenderer,
   createLinear,
@@ -9,9 +9,11 @@ import {
 } from "@TRender/t-svg";
 
 export default function Point() {
+  const svgRef = useRef();
+
   useEffect(() => {
-    const width = 400;
-    const height = 200;
+    const width = 8000;
+    const height = 4000;
 
     const renderer = createRenderer(width, height);
 
@@ -53,26 +55,37 @@ export default function Point() {
 
     // 使用比例尺映射数据
     const values = {
-      x: H.map(scaleX.scale),
-      y: W.map(scaleY.scale),
+      x: H.map(scaleX),
+      y: W.map(scaleY),
     };
 
     const scales = {
-      x: scaleX.scale,
-      y: scaleY.scale,
+      x: scaleX,
+      y: scaleY,
     };
 
     // 设置样式
     const styles = {
-      fill: "none",
+      fill: "red",
       stroke: "steelblue",
     };
 
+    const channels = {
+      stroke: ["#5B8FF9", "#5AD8A6", "#5D7092"],
+      x: values.x,
+      y: values.y,
+      r: [20, 5, 30],
+    };
+
     // 绘制点
-    const p = point(renderer, I, scales, values, styles, coordinate);
+    const p = point(renderer, I, scales, channels, styles, coordinate);
 
-    console.log(p, "p");
-  }, []);
+    const fragment = document.createDocumentFragment();
+    p.forEach((node) => fragment.appendChild(node));
 
-  return <div>Point</div>;
+    // 一次性添加所有节点
+    svgRef.current?.appendChild(fragment);
+  }, [svgRef]);
+
+  return <svg ref={svgRef} width='600' height='600'></svg>;
 }
