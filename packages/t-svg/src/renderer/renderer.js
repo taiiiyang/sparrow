@@ -60,8 +60,6 @@ export class Renderer {
   group() {
     return this.ctx.group;
   }
-
-  render() {}
 }
 
 export const createRenderer = (width, height) => {

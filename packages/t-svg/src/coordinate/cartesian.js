@@ -1,6 +1,7 @@
-import { curry } from '../utils';
-import { scale, translate } from './transforms';
+import { curry } from "../utils";
+import { scale, translate } from "./transforms";
 
+// 笛卡尔坐标系
 function coordinate(transformOptions, canvasOptions) {
   // 需要注意传入的值都是 [0, 1]，所以才能正确映射到画布坐标
   const { x, y, width, height } = canvasOptions;
