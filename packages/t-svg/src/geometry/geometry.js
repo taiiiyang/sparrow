@@ -7,7 +7,7 @@
  * @param {Coordinate} coordinate 使用的坐标系
  * @returns 渲染的 SVG 元素
  */
-function createGeometry(channels, render) {
+export function createGeometry(channels, render) {
   const geometry = (renderer, I, scales, values, directStyles, coordinate) => {
     Object.entries(channels).forEach(([key, { optional, scale }]) => {
       if (!optional) return;
