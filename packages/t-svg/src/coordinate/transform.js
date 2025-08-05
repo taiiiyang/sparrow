@@ -30,7 +30,7 @@ export function polar() {
   });
 }
 
-function transform(type, transformer) {
+export function transform(type, transformer) {
   transformer.type = () => type;
   return transformer;
 }

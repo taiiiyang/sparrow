@@ -57,21 +57,6 @@ importers:
         specifier: ^7.0.6
         version: 7.0.6
 
-  packages/core:
-    devDependencies:
-      globals:
-        specifier: ^16.0.0
-        version: 16.3.0
-      happy-dom:
-        specifier: ^9.0.0
-        version: 9.20.3
-      vite:
-        specifier: ^5.0.0
-        version: 5.4.19
-      vitest:
-        specifier: ^1.0.0
-        version: 1.6.1(happy-dom@9.20.3)
-
   packages/t-canvas:
     devDependencies:
       vite:

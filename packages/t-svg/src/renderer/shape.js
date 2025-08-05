@@ -1,4 +1,4 @@
-import { applyAttributes, createSVGElement, mount } from "./utils";
+import { applyAttributes, createSVGElement, mount } from "../utils";
 
 export default class Shape {
   constructor(context) {

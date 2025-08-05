@@ -1,11 +1,7 @@
-import RedRect from "@/src/components/RedRect";
+import Home from "@/src/pages/Home";
 
 function App() {
-  return (
-    <>
-      <RedRect />
-    </>
-  );
+  return <Home />;
 }
 
 export default App;

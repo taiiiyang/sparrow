@@ -1,4 +1,4 @@
-import { translate, scale, reflectY, polar as polarT } from "./transforms";
+import { translate, scale, reflectY, polar as polarT } from "./transform";
 import { curry } from "../utils";
 
 /**
