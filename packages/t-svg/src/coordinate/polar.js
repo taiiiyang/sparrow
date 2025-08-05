@@ -1,5 +1,5 @@
-import { translate, scale, reflectY, polar as polarT } from './transforms';
-import { curry } from '../utils';
+import { translate, scale, reflectY, polar as polarT } from "./transforms";
+import { curry } from "../utils";
 
 /**
  * 开始的角度：startAngle 和结束的角度 endAngle。也可以指定内半径 innerRadius 和外半径 outerRadius （范围都是：[0, 1])。
@@ -30,7 +30,7 @@ function coordinate(transformOptions, canvasOptions) {
     translate(0, 0.5),
 
     // 调整角度和半径的范围
-    // 相当于先削掉查的角度，后面再旋转时
+    // 相当于先削掉差的角度，后面再旋转
     scale(endAngle - startAngle, outerRadius - innerRadius),
     translate(startAngle, innerRadius),
     polarT(),

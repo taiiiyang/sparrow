@@ -1,9 +1,9 @@
-import { cartesian } from '../../src/coordinate/cartesian';
-import { compose } from '../../src/utils';
+import { cartesian } from "../../src/coordinate/cartesian";
+import { compose } from "../../src/utils";
 
 // 流程就是想通过 scale 将作用域 归一化，在后续通过基本变换映射到画布坐标
-describe('coordinate', () => {
-  test('cartesian', () => {
+describe("coordinate", () => {
+  it("cartesian", () => {
     const canvasOptions = {
       x: 0,
       y: 0,
