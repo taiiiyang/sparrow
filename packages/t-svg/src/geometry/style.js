@@ -5,3 +5,7 @@ export function channelStyles(index, channel) {
     ...(F ? { fill: F[index] } : {}),
   };
 }
+
+export function groupChannelStyles([index], channels) {
+  return channelStyles(index, channels);
+}
