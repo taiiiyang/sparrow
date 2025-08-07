@@ -7,14 +7,18 @@ export function closeTo(x, y, tol = 1e-5) {
 }
 
 export function dist([x0, y0], [x1 = 0, y1 = 0] = []) {
+  // 通过勾股定理，求两点之间距离
   return Math.sqrt((x0 - x1) ** 2 + (y0 - y1) ** 2);
 }
 
 export function sub([x1, y1], [x0, y0]) {
+  // 求得相对于原点的坐标
   return [x1 - x0, y1 - y0];
 }
 
+// 数学问题
 export function angleBetween(v0, v1) {
+  // 求得两个角度之差
   const a0 = angle(v0);
   const a1 = angle(v1);
   if (a0 < a1) return a1 - a0;
@@ -22,6 +26,7 @@ export function angleBetween(v0, v1) {
 }
 
 export function angle([x, y]) {
+  // 返回从原点 (0,0) 到 (x,y) 点的线段与 x 轴正方向之间的平面角度 (弧度值)，也就是 Math.atan2(y,x)
   const theta = Math.atan2(y, x);
   return theta;
 }
