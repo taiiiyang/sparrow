@@ -1,4 +1,5 @@
-import { line as pathLine } from "./d";
+import { line as pathLine, area as pathArea } from "./d";
+import { contour } from "./primitive";
 
 export const circle = (renderer, coordinate, { cx, cy, ...styles }) => {
   const [x, y] = coordinate([cx, cy]);
@@ -37,4 +38,17 @@ export const line = (renderer, coordinate, { X, Y, I: I0, ...style }) => {
   const points = I.map((i) => coordinate([X[i], Y[i]]));
   const path = pathLine(points);
   return renderer.path({ d: path, ...style });
+};
+
+export const area = (renderer, coordinate, { X1, Y1, X2, Y2, I: I0, ...style }) => {
+  const I = coordinate.isPolar() ? [...I0, I0[0]] : I0;
+  // 需要围成一个圈
+  const points = [...I.map((i) => [X1[i], Y1[i]]), ...I.map((i) => [X2[i], Y2[i]]).reverse()].map(
+    coordinate,
+  );
+  if (coordinate.isPolar()) {
+    return contour(renderer, { points, ...style });
+  }
+
+  return renderer.path({ d: pathArea(points), ...style });
 };

@@ -10,7 +10,7 @@
 export function createGeometry(channels, render) {
   const geometry = (renderer, I, scales, values, directStyles, coordinate) => {
     Object.entries(channels).forEach(([key, { optional, scale }]) => {
-      if (!optional) return;
+      if (optional) return;
       if (!values[key]) throw new Error(`missing Channels: ${key}`);
       if (!scaleValidator(scale, scales, key)) throw new Error(`${key} channels need a scale`);
     });
