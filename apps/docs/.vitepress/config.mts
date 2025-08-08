@@ -16,6 +16,7 @@ export default defineConfig({
         text: '源码解析',
         items: [
           { text: 'Scale 比例尺', link: '/source-code/scale' },
+          { text: 'Geometry 几何图形', link: '/source-code/geometry' },
         ]
       }
     ],

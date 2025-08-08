@@ -8,6 +8,7 @@
     "dev": "turbo dev",
     "dev:pg": "turbo dev --filter @TRender/playground",
     "dev:docs": "turbo dev --filter @TRender/docs",
+    "test:svg": "turbo test --filter @TRender/t-svg",
     "test": "turbo test",
     "build": "turbo build",
     "lint": "turbo lint"

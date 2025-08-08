@@ -15,8 +15,12 @@ node_modules/
 dist
 lib
 esm
-cache
 
 # Test
 coverage
+
+# cache
+.temp
+cache
 .turbo
+.vitepress/.temp

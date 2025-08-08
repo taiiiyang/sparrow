@@ -1,30 +1,13 @@
-import { createLinear } from './linear';
+import { createLinear } from "./linear";
 
-export function createTime({ domain, range, interpolate }) {
-  return new Time({ domain, range, interpolate });
-}
+export function createTime({ domain, ...rest }) {
+  const transform = (x) => x.getTime();
+  const transformedDomain = domain.map(transform);
+  const linear = createLinear({ domain: transformedDomain, ...rest });
+  const scale = (x) => linear(transform(x));
 
-class Time {
-  constructor({ domain, range, interpolate }) {
-    this.domain = domain;
-    this.range = range;
-    this.transformedDomain = domain.map((d) => this.transform(d));
-    this.linear = createLinear({ transformedDomain, range, interpolate });
-  }
+  scale.nice = (tickCount) => linear.nice(tickCount);
+  scale.ticks = (tickCount) => linear.ticks(tickCount).map((d) => new Date(d));
 
-  transform(x) {
-    return x.getTime(x);
-  }
-
-  scale(x) {
-    return this.linear.scale(this.transform(x));
-  }
-
-  ticks(tickCount) {
-    this.linear.ticks(tickCount).map((t) => new Date(t));
-  }
-
-  nice(tickCount) {
-    this.linear.nice(tickCount);
-  }
+  return scale;
 }

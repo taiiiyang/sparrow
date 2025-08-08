@@ -1,5 +1,5 @@
 import { curry } from "../utils";
-import { scale, translate } from "./transforms";
+import { scale, translate } from "./transform";
 
 // 笛卡尔坐标系
 function coordinate(transformOptions, canvasOptions) {

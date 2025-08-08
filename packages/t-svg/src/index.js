@@ -1,1 +1,4 @@
-export { createRenderer, Renderer } from "./renderer/index";
+export { createRenderer, Renderer } from "./renderer";
+export * from "./scale";
+export * from "./geometry";
+export * from "./coordinate";
