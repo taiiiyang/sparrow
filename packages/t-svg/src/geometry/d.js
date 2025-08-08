@@ -1,4 +1,4 @@
-import { dist, sub, angleBetween } from "./utils";
+import { dist, sub, angleBetween } from "../utils";
 
 // 二维数组
 export function line([p0, ...points]) {

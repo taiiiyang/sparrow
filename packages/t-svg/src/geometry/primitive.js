@@ -1,4 +1,4 @@
-import { line as pathLine, area as pathArea } from "./d";
+import { line as pathLine, area as pathArea, ring as pathRing } from "./d";
 
 // 绘制极坐标系 等高线
 export function contour(renderer, { points, ...styles }) {
@@ -16,4 +16,21 @@ export function contour(renderer, { points, ...styles }) {
   });
 
   return [innerStroke, contour, outerStroke];
+}
+
+export function ring(renderer, { cx, cy, r1, r2, ...styles }) {
+  const ring = renderer.path({
+    d: pathRing([
+      [cx, cy],
+      [r1, r2],
+    ]),
+    ...styles,
+    stroke: "none",
+  });
+
+  // 绘制两个圆来模拟边框
+  const innerStroke = renderer.circle({ ...styles, cx, cy, r: r1 });
+  const outerStroke = renderer.circle({ ...styles, cx, cy, r: r2 });
+
+  return [innerStroke, ring, outerStroke];
 }

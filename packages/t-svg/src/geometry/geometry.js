@@ -7,6 +7,7 @@
  * @param {Coordinate} coordinate 使用的坐标系
  * @returns 渲染的 SVG 元素
  */
+// geometry 调用时，会去校验是否已经传入了对应的通道值
 export function createGeometry(channels, render) {
   const geometry = (renderer, I, scales, values, directStyles, coordinate) => {
     Object.entries(channels).forEach(([key, { optional, scale }]) => {

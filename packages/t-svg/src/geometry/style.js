@@ -6,6 +6,7 @@ export function channelStyles(index, channel) {
   };
 }
 
+// 简配版，先只取第一个点的作为一整个的样式
 export function groupChannelStyles([index], channels) {
   return channelStyles(index, channels);
 }

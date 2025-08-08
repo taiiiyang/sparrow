@@ -1,5 +1,6 @@
-import { line as pathLine, area as pathArea } from "./d";
-import { contour } from "./primitive";
+import { line as pathLine, area as pathArea, sector as pathSector } from "./d";
+import { contour, ring } from "./primitive";
+import { sub, equal, dist } from "../utils";
 
 export const circle = (renderer, coordinate, { cx, cy, ...styles }) => {
   const [x, y] = coordinate([cx, cy]);
@@ -51,4 +52,34 @@ export const area = (renderer, coordinate, { X1, Y1, X2, Y2, I: I0, ...style }) 
   }
 
   return renderer.path({ d: pathArea(points), ...style });
+};
+
+export const rect = (renderer, coordinate, { x1, y1, x2, y2, ...styles }) => {
+  const v0 = [x1, y1];
+  const v1 = [x2, y1];
+  const v2 = [x2, y2];
+  const v3 = [x1, y2];
+  const vs = coordinate.isTranspose() ? [v3, v0, v1, v2] : [v0, v1, v2, v3];
+  const ps = vs.map(coordinate);
+
+  const [p0, p1, p2, p3] = ps;
+
+  if (!coordinate.isPolar()) {
+    const [width, height] = sub(p2, p0);
+    const [x, y] = p0;
+    return renderer.rect({ x, y, width, height, ...styles });
+  }
+
+  const center = coordinate.center;
+  const [cx, cy] = center;
+
+  if (!(equal(p0, p1) && equal(p2, p3))) {
+    return renderer.path({ d: pathSector([center, ...ps]), ...styles });
+  }
+
+  // 绘制圆环
+  const r2 = dist(center, p2); // 内半径
+  const r1 = dist(center, p0); // 外半径
+
+  return ring(renderer, { cx, cy, r1, r2, ...styles });
 };
