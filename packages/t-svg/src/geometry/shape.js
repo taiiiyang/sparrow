@@ -83,3 +83,7 @@ export const rect = (renderer, coordinate, { x1, y1, x2, y2, ...styles }) => {
 
   return ring(renderer, { cx, cy, r1, r2, ...styles });
 };
+
+export const path = (renderer, coordinate, attributes) => {
+  return renderer.path(attributes);
+};

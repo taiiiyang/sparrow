@@ -54,3 +54,15 @@ export function createGeometry(channels, render) {
   },
 }
 ```
+
+#### 几何图形创建的过程
+
+1. 创建几何图形以及所需通道
+2. 校验通道值是否传入
+3. 校验比例尺是否传入
+4. 校验比例尺是否正确
+5. 根据 I 通道值进行遍历，每个 I 通道值对应一个图形
+6. 通过 shape 对通道值进行处理
+7. shape 内部 调用 d 函数，根据该图形的通道值，求得在 svg 中对应的 path / circle / rect 值
+8. 调用 renderer 进行渲染
+9. 返回创建出的几何图形

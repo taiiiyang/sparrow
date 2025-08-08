@@ -32,8 +32,5 @@ export function ring(renderer, { cx, cy, r1, r2, ...styles }) {
   const innerStroke = renderer.circle({ ...styles, fill: "none", cx, cy, r: r1 });
   const outerStroke = renderer.circle({ ...styles, fill: "none", cx, cy, r: r2 });
 
-  console.log(innerStroke, "innerStroke");
-  console.log(outerStroke, "outerStroke");
-
   return [innerStroke, ring, outerStroke];
 }

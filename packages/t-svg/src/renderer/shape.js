@@ -56,7 +56,8 @@ export default class Shape {
   // 'M 10 10 L 100 100 L 100 10 Z'
   path(attributes) {
     const { d } = attributes;
-    return this.shape("path", { ...attributes, d: d.flat().join(" ") });
+    const path = Array.isArray(d) ? d.flat().join(" ") : d;
+    return this.shape("path", { ...attributes, d: path });
   }
 
   ring(attributes) {

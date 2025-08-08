@@ -11,7 +11,6 @@ const channels = createChannels({
 
 // 可用来实现柱状图、玫瑰图
 const render = (renderer, I, scales, values, directStyles, coordinate) => {
-  console.log("render");
   const defaults = {
     x: 0,
     z: 0,
