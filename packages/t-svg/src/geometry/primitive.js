@@ -29,8 +29,11 @@ export function ring(renderer, { cx, cy, r1, r2, ...styles }) {
   });
 
   // 绘制两个圆来模拟边框
-  const innerStroke = renderer.circle({ ...styles, cx, cy, r: r1 });
-  const outerStroke = renderer.circle({ ...styles, cx, cy, r: r2 });
+  const innerStroke = renderer.circle({ ...styles, fill: "none", cx, cy, r: r1 });
+  const outerStroke = renderer.circle({ ...styles, fill: "none", cx, cy, r: r2 });
+
+  console.log(innerStroke, "innerStroke");
+  console.log(outerStroke, "outerStroke");
 
   return [innerStroke, ring, outerStroke];
 }

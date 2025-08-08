@@ -4,4 +4,6 @@ export * from "./text";
 export * from "./line";
 export * from "./area";
 export * from "./rect";
-export * from "./cell"
+export * from "./cell";
+export * from "./interval";
+export * from "./path";

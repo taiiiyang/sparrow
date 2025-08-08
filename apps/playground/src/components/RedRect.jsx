@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { drawRedRect } from "../utils/drawRedRect.js";
+import { drawRedRect } from "@/utils/drawRedRect.js";
 
 function RedRect() {
   const svgRef = useRef(null);

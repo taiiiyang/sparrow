@@ -2,6 +2,7 @@ import { cartesian, createCoordinate } from "../../src/coordinate";
 import { createRenderer } from "../../src/renderer";
 import { createDiv, mount } from "../utils";
 
+// 坐标系的第二象限是位于右下角的
 export function plot({
   index,
   width = 600,
