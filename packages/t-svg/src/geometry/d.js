@@ -21,7 +21,7 @@ export function sector([c, p0, p1, p2, p3]) {
   // path A: x轴半径 y轴半径 旋转角度 大弧/小弧  sweep-flag x y
   return [
     ["M", p0[0], p0[1]],
-    ["A", r, r, 0, l, 0, p1[0], p1[1]],
+    ["A", r, r, 0, l, 1, p1[0], p1[1]],
     ["L", p2[0], p2[1]],
     ["A", r1, r1, 0, l, 0, p3[0], p3[1]],
     ["Z"],
