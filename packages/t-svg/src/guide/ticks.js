@@ -84,7 +84,9 @@ export function ticksCircular(renderer, ticks, { tickLength, fontSize, center })
 }
 
 function rotationOf(center, [x, y]) {
+  // 逆时针为正值
   const tickRotation = angle(sub([x, y], center));
+  // 当顺时针时，需要将 text rotation 相对于 刻度 再旋转一个 π ，确保可视化
   const textRotation = tickRotation < 0 ? Math.PI : 0;
   return { tickRotation: tickRotation - Math.PI / 2, textRotation };
 }
