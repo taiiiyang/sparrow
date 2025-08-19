@@ -37,7 +37,7 @@ export function labelBottomRight(renderer, label, tick, { fontSize, tickLength }
   });
 }
 
-export function labelTopLeft(renderer, label, tick, { fontSize, tickLength }) {
+export function labelTopRight(renderer, label, tick, { fontSize, tickLength }) {
   const { x, y } = tick;
   const y1 = y - tickLength;
   renderer.text({

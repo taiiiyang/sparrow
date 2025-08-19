@@ -6,7 +6,7 @@ import { degree, angle, sub, unique } from "../utils";
 // 跟底部坐标轴垂直的 ticks 所对应的线
 export function ticksBottom(renderer, ticks, { fontSize, tickLength }) {
   ticks.forEach(({ x, y, text }) => {
-    const x2 = x1;
+    const x2 = x;
     const y2 = y + tickLength;
     renderer.line({ x1: x, y1: y, x2, y2, stroke: "currentColor", class: "tick" });
     renderer.text({ text, fontSize, x, y: y2, textAnchor: "middle", dy: "1em", class: "text" });

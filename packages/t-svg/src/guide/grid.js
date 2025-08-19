@@ -22,7 +22,7 @@ export function gridRay(renderer, ticks, end) {
   );
 }
 
-export function gridCircle(renderer, ticks, end) {
+export function gridCircular(renderer, ticks, end) {
   const [cx, cy] = end;
   ticks.forEach(({ x, y }) => {
     const r = dist(end, [x, y]);

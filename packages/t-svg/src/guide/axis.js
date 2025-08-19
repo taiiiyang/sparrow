@@ -21,7 +21,7 @@ export function createAxis(components, labelOf) {
     const offset = scale.bandWidth ? scale.bandWidth() / 2 : 0;
     const values = scale.ticks ? scale.ticks(tickCount) : domain;
 
-    const center = coordinate.center();
+    const center = coordinate.center;
     const type = `${+coordinate.isPolar()}${+coordinate.isTranspose()}`;
 
     const options = { tickLength, fontSize, center };
@@ -30,7 +30,7 @@ export function createAxis(components, labelOf) {
 
     const ticks = values.map((d) => {
       const [x, y] = coordinate(start(d, scale, offset));
-      const text = formatter(text);
+      const text = formatter(d);
       return { x, y, text };
     });
 
