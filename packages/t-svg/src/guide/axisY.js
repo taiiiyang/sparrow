@@ -1,6 +1,6 @@
 import { createAxis } from "./axis";
 import { ticksLeft, ticksCircular, ticksTop } from "./ticks";
-import { labelLeftTop, labelTopRight } from "./label";
+import { labelLeftUp, labelTopRight } from "./label";
 import { gridRay, gridCircular, gridVertical, gridHorizontal } from "./grid";
 
 const components = {
@@ -9,7 +9,7 @@ const components = {
     end: (coordinate) => coordinate([1, 0]),
     ticks: ticksLeft,
     grid: gridHorizontal,
-    label: labelLeftTop,
+    label: labelLeftUp,
   },
   "01": {
     start: (d, scale, offset) => [0, scale(d) + offset], // x 轴取最里面

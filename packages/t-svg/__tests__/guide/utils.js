@@ -10,7 +10,6 @@ export function renderAxis({ scale, transforms, axis, ...options }) {
     height: 340,
     transforms,
   });
-  console.log(coordinate, "coordinate");
   const renderer = createRenderer(600, 400);
   mount(createDiv(), renderer.node());
   axis(renderer, scale, coordinate, options);

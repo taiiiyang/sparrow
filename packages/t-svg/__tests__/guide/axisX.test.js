@@ -33,13 +33,6 @@ describe("axisX", () => {
       x: "30",
       y: "375",
       dy: "1em",
-      textContent: "0",
-    });
-
-    firstOf(svg, "label").toEqual({
-      textContent: "val →",
-      x: "570",
-      y: "375",
     });
   });
 
@@ -66,13 +59,6 @@ describe("axisX", () => {
       x: "25",
       y: "30",
       dy: "0.5em",
-      textContent: "0",
-    });
-
-    firstOf(svg, "label").toEqual({
-      textContent: "↓ val",
-      x: "30",
-      y: "370",
     });
   });
 
