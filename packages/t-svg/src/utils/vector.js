@@ -27,6 +27,7 @@ export function angleBetween(v0, v1) {
 
 export function angle([x, y]) {
   // 返回从原点 (0,0) 到 (x,y) 点的线段与 x 轴正方向之间的平面角度 (弧度值)，也就是 Math.atan2(y,x)
+  // 那在一个页面中，原点指的是什么？那就是左上角的顶点，它就是原点。原点到一个点(坐标)的线段逆时针旋转的弧度值就是Math.atan2()的返回值
   const theta = Math.atan2(y, x);
   return theta;
 }
