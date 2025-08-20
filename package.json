@@ -11,7 +11,8 @@
     "test:svg": "turbo test --filter @TRender/t-svg",
     "test": "turbo test",
     "build": "turbo build",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "release": "changeset tag && git push origin --tags"
   },
   "workspaces": [
     "apps/*",
@@ -31,5 +32,8 @@
   "devDependencies": {
     "turbo": "^2.5.5"
   },
-  "packageManager": "pnpm@10.4.1"
+  "packageManager": "pnpm@10.4.1",
+  "dependencies": {
+    "@changesets/cli": "^2.29.6"
+  }
 }
